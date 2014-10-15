@@ -40,10 +40,7 @@ UserSchema
 UserSchema
   .virtual('profile')
   .get(function() {
-    return {
-      'name': this.name,
-      'role': this.role
-    };
+    return this.linkedin;
   });
 
 // Non-sensitive info we'll be putting in the token

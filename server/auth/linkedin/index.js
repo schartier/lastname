@@ -11,7 +11,7 @@ router
     failureRedirect: '/signup',
     state: 'blabla',
     session: false,
-    scope: ['r_emailaddress', 'r_basicprofile', 'r_fullprofile']
+    scope: ['r_emailaddress', 'r_basicprofile', 'r_fullprofile', 'r_contactinfo', 'r_network', 'rw_company_admin', 'rw_nus', 'rw_groups', 'w_messages']
   }))
 
   .get('/callback', passport.authenticate('linkedin', {

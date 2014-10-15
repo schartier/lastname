@@ -5,7 +5,8 @@ exports.setup = function (User, config) {
   passport.use(new LinkedinStrategy({
       clientID: config.linkedin.clientID,
       clientSecret: config.linkedin.clientSecret,
-      callbackURL: config.linkedin.callbackURL
+      callbackURL: config.linkedin.callbackURL,
+      scope: ['r_emailaddress', 'r_basicprofile', 'r_fullprofile', 'r_contactinfo', 'r_network', 'rw_company_admin', 'rw_nus', 'rw_groups', 'w_messages']
     },
     function(accessToken, refreshToken, profile, done) {
       User.findOne({
